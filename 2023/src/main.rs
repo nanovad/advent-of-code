@@ -1,11 +1,12 @@
-use aoc2023::day1;
+use aoc2023::*;
 
 fn main() {
-    env_logger::builder()
-        .filter(None, log::LevelFilter::Info)
-        .init();
+    let env = env_logger::Env::default()
+        .filter_or(env_logger::DEFAULT_FILTER_ENV, "info");
+    env_logger::init_from_env(env);
 
     println!("Advent of Code 2023");
 
     day1::day1();
+    day2::day2();
 }
